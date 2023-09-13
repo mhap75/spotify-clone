@@ -2,26 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    height: 100%;
+    background-color: black;
+    color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@layer components {
+    .authorBase {
+        @apply truncate text-sm text-neutral-400
+    }
+
+    .sectionCard {
+        @apply sizeFull overflow-hidden overflow-y-auto rounded-lg bg-neutral-900
+    }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+    .flexCol {
+        @apply flex flex-col
+    }
+
+    .flexBetween {
+        @apply flex justify-between items-center
+    }
+
+    .flexCenter {
+        @apply flex items-center justify-center
+    }
+
+    .flexEnd {
+        @apply flex items-center justify-end
+    }
+
+    .inlineFlexCenter {
+        @apply inline-flex justify-center items-center
+    }
+
+    .sizeFull {
+        @apply w-full h-full
+    }
 }
