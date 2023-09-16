@@ -16,6 +16,7 @@ import Sidebar from "./Sidebar";
 import SidebarItem from "./SidebarItem";
 import Slider from "./Slider";
 import SongItem from "./SongItem";
+import SubscribeModal from "./SubscribeModal";
 import UploadModal from "./UploadModal";
 
 export {
@@ -37,5 +38,6 @@ export {
   SidebarItem,
   Slider,
   SongItem,
+  SubscribeModal,
   UploadModal,
 };

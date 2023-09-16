@@ -5,7 +5,7 @@ import { FadeLoader } from "react-spinners";
 
 const Loading = () => {
   return (
-    <Box className="flecCenter h-full">
+    <Box className="flexCenter h-full">
       <FadeLoader color="#22c55e" height={10} radius={5} width={7} />
     </Box>
   );

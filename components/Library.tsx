@@ -3,6 +3,7 @@
 import { MediaItem } from "@/components";
 import useAuthModal from "@/hooks/useAuthModal";
 import useOnPlay from "@/hooks/useOnPlay";
+import useSubscribeModal from "@/hooks/useSubscribeModal";
 import useUploadModal from "@/hooks/useUploadModal";
 import { useUser } from "@/hooks/useUser";
 import { Song } from "@/types";
@@ -16,7 +17,8 @@ interface LibraryProps {
 const Library: React.FC<LibraryProps> = ({ songs }) => {
   const authModal = useAuthModal();
   const uploadModal = useUploadModal();
-  const { user } = useUser();
+  const { onOpen } = useSubscribeModal();
+  const { user, subscription } = useUser();
 
   const onPlay = useOnPlay(songs);
 
@@ -25,7 +27,7 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
       return authModal.onOpen();
     }
 
-    // ToDo check subscription status
+    if (!subscription) return onOpen();
 
     return uploadModal.onOpen();
   };
